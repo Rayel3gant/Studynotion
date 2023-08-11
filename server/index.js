@@ -21,7 +21,7 @@ app.use(express.json());
 
 // we have to entertain the request coming from front end
 app.use(cors({
-    origin:"http://localhost:3000",     
+    origin:"*",     
     credentials:true, 
 }))
 
