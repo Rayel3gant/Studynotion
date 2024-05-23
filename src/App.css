@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,body{
+    overflow-x: hidden;
+}
+#homepageBG{
+    background: url("../src/assets/Images/bghome.svg");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#circularGradient{
+    background: radial-gradient(#e66465 50%, #9198e5);
+    opacity: 50%;
+}
+.requiredValue{
+    color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.active{
+    color: #FFE83D;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    --c: radial-gradient(farthest-side,#766DF4 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    animation: s8 2s infinite;
+    position: relative;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .custom-loader::before {    
+    content:"";
+    position: absolute;
+    inset:0;
+    margin: 3px;
+    background:repeating-conic-gradient(#0000 0 35deg,#766DF4 0 90deg);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 3px),#000 0);
+    border-radius: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  @keyframes s8 { 
+    100%{transform: rotate(.5turn)}
   }
-}
+
+  .accordion-body{
+
+  }
+
+  .accordion-title{
+
+  }
+
+  .accordion-active{
+    
+  }
+
+  .codeblock1 {
+    width: 372.95px;
+    height: 257.05px;
+    border-radius: 100%;
+    left: calc(50% - 372.95px / 2 - 76.53px);
+    top: calc(50% - 257.05px / 2 - 47.47px);
+    background: linear-gradient(
+      123.77deg,
+      #8a2be2 -6.46%,
+      #ffa500 59.04%,
+      #f8f8ff 124.53%
+    );
+    opacity: 0.2;
+    filter: blur(34px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+  }
+  .codeblock2 {
+    position: absolute;
+    width: 372.95px;
+    height: 257.05px;
+    left: calc(50% - 372.95px / 2 - 76.53px);
+    top: calc(50% - 257.05px / 2 - 47.47px);
+    border-radius: 100%;
+    background: linear-gradient(
+      118.19deg,
+      #1fa2ff -3.62%,
+      #12d8fa 50.44%,
+      #a6ffcb 104.51%
+    );
+    opacity: 0.2;
+    filter: blur(34px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+  }
+
+
+  .form-style{
+    @apply rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
+  }
+
+  
